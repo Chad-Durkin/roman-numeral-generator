@@ -15,13 +15,20 @@ function generator(input, inputLength) {
   var outputArray = [];
   var numeralArray = ['I', 'X', 'C', 'M'];
   var fiveArray = ['V', 'L', 'D'];
+  var nineArray = ['X', 'C', 'M']
   for (var i = inputLength; i > 0; i--) {
       var digit = parseInt(input[i - 1]);
 
     for (var j = digit; j > 0; j--) {
-      if (digit % 5 === 0) {
+      if (j === 5) {
         outputArray.unshift(fiveArray[inputLength - i]);
-        j = 0;
+        j -= 5;
+      } else if (j === 4) {
+        outputArray.unshift(numeralArray[inputLength - i] + fiveArray[inputLength - i]);
+        j -= 4;
+      } else if (j === 9) {
+        outputArray.unshift(numeralArray[inputLength - i] + nineArray[inputLength - i]);
+        j -= 9;
       } else {
       outputArray.unshift(numeralArray[inputLength - i]);
      }
