@@ -15,7 +15,6 @@ function generator(input, inputLength) {
   var outputArray = [];
   var numeralArray = ['I', 'X', 'C', 'M'];
   var fiveArray = ['V', 'L', 'D'];
-  var nineArray = ['X', 'C', 'M']
   for (var i = inputLength; i > 0; i--) {
       var digit = parseInt(input[i - 1]);
 
@@ -27,7 +26,7 @@ function generator(input, inputLength) {
         outputArray.unshift(numeralArray[inputLength - i] + fiveArray[inputLength - i]);
         j -= 4;
       } else if (j === 9) {
-        outputArray.unshift(numeralArray[inputLength - i] + nineArray[inputLength - i]);
+        outputArray.unshift(numeralArray[inputLength - i] + numeralArray[inputLength - i + 1]);
         j -= 9;
       } else {
       outputArray.unshift(numeralArray[inputLength - i]);
