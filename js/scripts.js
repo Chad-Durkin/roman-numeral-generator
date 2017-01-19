@@ -33,7 +33,6 @@ function generator(input, inputLength) {
      }
   }
 }
-
   return outputArray;
 }
 
