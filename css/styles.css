@@ -1,0 +1,31 @@
+body {
+  background: url("http://www.hotelroomsearch.net/im/attractions/roman-colosseum-1.jpg") no-repeat;
+  background-size: cover;
+}
+
+
+.container {
+  background-color: rgba(137, 102, 77, 0.7) !important;
+  height: 100vh;
+  border: 2px solid white;
+  margin-top: -1%;
+}
+
+.jumbotron {
+  background-color: inherit !important;
+  border: 2px solid white;
+}
+
+.jumbotron h1 {
+  color: white !important;
+}
+
+
+label {
+  color: white;
+}
+
+.result {
+  color: white;
+  display: none;
+}

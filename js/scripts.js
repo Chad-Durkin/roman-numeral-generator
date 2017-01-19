@@ -51,6 +51,7 @@ $(function(){
     inputChecker(inputValue);
 
     var outputArray = generator(input, inputLength);
+    $(".result").slideDown();
     $("#output").text(outputArray.join(""));
   })
 });
