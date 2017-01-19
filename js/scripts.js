@@ -13,17 +13,17 @@ function inputChecker(inputValue) {
 
 function generator(input, inputLength) {
   var outputArray = [];
-  var numeralArray = ['M', 'C', 'X', 'I'];
-  var fiveArray = ['D', 'L', 'V'];
+  var numeralArray = ['I', 'X', 'C', 'M'];
+  var fiveArray = ['V', 'L', 'D'];
   for (var i = inputLength; i > 0; i--) {
       var digit = parseInt(input[i - 1]);
 
     for (var j = digit; j > 0; j--) {
       if (digit % 5 === 0) {
-        outputArray.push(fiveArray[inputLength - i]);
+        outputArray.unshift(fiveArray[inputLength - i]);
         j = 0;
       } else {
-      outputArray.push(numeralArray[inputLength - i]);
+      outputArray.unshift(numeralArray[inputLength - i]);
      }
   }
 }
