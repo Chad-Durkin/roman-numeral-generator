@@ -13,13 +13,20 @@ function inputChecker(inputValue) {
 
 function generator(input, inputLength) {
   var outputArray = [];
-  var numeralArray = ['m', 'c', 'x', 'i'];
+  var numeralArray = ['M', 'C', 'X', 'I'];
+  var fiveArray = ['D', 'L', 'V'];
   for (var i = inputLength; i > 0; i--) {
       var digit = parseInt(input[i - 1]);
+
     for (var j = digit; j > 0; j--) {
+      if (digit % 5 === 0) {
+        outputArray.push(fiveArray[inputLength - i]);
+        j = 0;
+      } else {
       outputArray.push(numeralArray[inputLength - i]);
-    }
+     }
   }
+}
 
   return outputArray;
 }
